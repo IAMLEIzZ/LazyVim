@@ -13,6 +13,16 @@ return {
     opts = {
       servers = {
         gopls = {
+          root_dir = function(fname)
+            local path = fname
+            if type(fname) == "number" then
+              path = vim.api.nvim_buf_get_name(fname)
+            end
+            if path:match("leetcode") then
+              return nil
+            end
+            return require("lspconfig.util").root_pattern("go.mod")(path)
+          end,
           settings = {
             gopls = {
               analyses = {

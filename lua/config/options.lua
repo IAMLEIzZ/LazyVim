@@ -24,3 +24,6 @@ vim.g.lazyvim_python_ruff = "ruff_lsp"
 
 -- 关闭 autochdir
 vim.opt.autochdir = false
+
+-- 设置 conda
+vim.g.python3_host_prog = vim.fn.exepath("python")

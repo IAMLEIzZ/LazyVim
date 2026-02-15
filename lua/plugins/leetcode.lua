@@ -13,8 +13,11 @@ return {
         arg = "leetcode.nvim",
 
         ---@type lc.lang
-        lang = "cpp",
-
+        lang = "golang",
+        
+        ---@type boolean
+        image_support = true,
+      
         cn = { -- leetcode.cn
             enabled = true, ---@type boolean
             translator = true, ---@type boolean
