@@ -3,26 +3,18 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, { "go", "gomod", "gowork", "gosum" })
     end,
   },
 
   -- 启用 Go LSP 和调试支持
+  -- nvim-dap
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        gopls = {
-          root_dir = function(fname)
-            local path = fname
-            if type(fname) == "number" then
-              path = vim.api.nvim_buf_get_name(fname)
-            end
-            if path:match("leetcode") then
-              return nil
-            end
-            return require("lspconfig.util").root_pattern("go.mod")(path)
-          end,
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      gopls = {
           settings = {
             gopls = {
               analyses = {
@@ -31,21 +23,22 @@ return {
               },
               staticcheck = true,
               gofumpt = true,
+              completeUnimported = true,
+              usePlaceholders = false,
             },
           },
         },
       },
     },
   },
-  -- nvim-dap
+
+-- nvim-dap
   {
     "mfussenegger/nvim-dap",
     dependencies = {
       "leoluz/nvim-dap-go", -- Go 专用适配器
     },
     config = function()
-      local dap = require("dap")
-
       -- 关键：覆盖 LazyVim 的断点符号
       vim.fn.sign_define("DapBreakpoint", {
         text = "",
@@ -79,9 +72,7 @@ return {
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
-      
       dapui.setup()
-      
       -- 自动打开/关闭调试 UI
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
