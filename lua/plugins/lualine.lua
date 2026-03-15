@@ -5,7 +5,7 @@ return {
     opts = function()
       return {
         options = {
-          theme = "catppuccin",
+          theme = "catppuccin-nvim",
           globalstatus = true,
           disabled_filetypes = {
             statusline = { "neo-tree", "dashboard", "alpha" },
