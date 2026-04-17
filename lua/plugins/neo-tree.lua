@@ -6,14 +6,14 @@ return {
         visible = true,
         show_hidden_count = true,
         hide_dotfiles = false,
-        hide_gitignored = true,
-        hide_by_name = {
-          --'.git', '.DS_Store',  -- 'thumbs.db',
-        },
+        hide_gitignored = false,
+        hide_by_name = {},
+        hide_by_pattern = {},
+        always_show = {},
         never_show = {'.git'},
       },
       follow_current_file = {
-        enabled = false,    -- 关闭跟随，保持固定根目录
+        enabled = false,
       },
     }
   }

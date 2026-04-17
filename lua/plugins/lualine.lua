@@ -26,8 +26,9 @@ return {
           lualine_c = {
             {
               "filename",
-              path = 3,              -- 相对路径
-              shorting_target = 9999, -- 关键：永不省略 !!!
+              path = 1,              -- 相对路径
+              shorten = false,
+              shorting_target = 0, -- 关键：永不省略 !!!
               symbols = {
                 modified = "●",
                 readonly = "",
