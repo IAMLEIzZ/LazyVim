@@ -5,7 +5,8 @@ return {
       'nvim-treesitter/nvim-treesitter', -- optional but recommended
     },
     keys = {
-      { '<leader>ia', '<cmd>IntentAnalyze<cr>', desc = 'Intent: Analyze function' },
+      { '<leader>ia', '<cmd>IntentAnalyzeProject<cr>', desc = 'Intent: Analyze project' },
+      { '<leader>iA', '<cmd>IntentAnalyze<cr>', desc = 'Intent: Analyze current file' },
       { '<leader>it', '<cmd>IntentToggle<cr>', desc = 'Intent: Toggle panel' },
       { '<leader>ir', '<cmd>IntentRefresh<cr>', desc = 'Intent: Refresh (ignore cache)' },
       { '<leader>iR', ':IntentRetag ', desc = 'Intent: Retag block' },
