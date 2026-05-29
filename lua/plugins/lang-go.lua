@@ -58,7 +58,7 @@ return {
       -- 配置 delve
       require("dap-go").setup({
         delve = {
-          path = "/Users/iamleizz/.gvm/pkgsets/go1.25.3/global/bin/dlv",
+          path = "/Users/moonshot/go/bin/dlv",
           initialize_timeout_sec = 20,
           port = 38697,
         },
