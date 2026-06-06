@@ -1,5 +1,6 @@
 return
-{
+{ 
+  -- claudecode in neovim
   {
   "coder/claudecode.nvim",
   dependencies = { "folke/snacks.nvim" },
