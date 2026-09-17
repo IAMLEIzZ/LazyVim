@@ -2,3 +2,4 @@
 require("config.lazy")
 vim.cmd("highlight Normal ctermbg=none guibg=none")
 -- vim.cmd.colorscheme("cyberdream")
+vim.opt.spelllang = { "en", "cjk" }
